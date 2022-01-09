@@ -63,6 +63,29 @@ public class mainClass {
 
         do_while();
 
+        TestHashMap myHM = new TestHashMap();
+        myHM.Tiere.put("Hase","weiss");
+        myHM.Tiere.put("Schwan","schwarz");
+        myHM.Tiere.put("Ara","bunt");
+
+        for (String i : myHM.Tiere.keySet()) {
+            System.out.println("Tier: " + i + " Farbe: " + myHM.Tiere.get(i));
+        }
+        System.out.println(myHM.Tiere.get("Ara"));
+
+        myHM.Parameter.put("mode", "delete");
+        myHM.Parameter.put("logLevel","WARM");
+        myHM.Parameter.put("threads","10");
+
+        for (String i : myHM.Parameter.keySet()) {
+            System.out.println("Parameter: " + i + " Value: " + myHM.Parameter.get(i));
+            if (i.equals("threads")) {
+                int x = Integer.parseInt(myHM.Parameter.get(i));
+                System.out.println("Threads: " + x);
+            }
+        }
+
+
     }
 
     public static void schreibeText(String text) {
