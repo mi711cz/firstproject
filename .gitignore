@@ -1,5 +1,6 @@
 logs
 *.log*
+target
 
 ### Gradle template
 .gradle
