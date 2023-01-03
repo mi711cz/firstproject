@@ -1,5 +1,6 @@
 logs
 *.log*
+.vscode
 
 ### Gradle template
 .gradle
