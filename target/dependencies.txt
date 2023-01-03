@@ -1,0 +1,3 @@
+digraph "org.example:firstproject:jar:1.0-SNAPSHOT" { 
+	"org.example:firstproject:jar:1.0-SNAPSHOT" -> "org.projectlombok:lombok:jar:1.18.24:compile" ; 
+ } 

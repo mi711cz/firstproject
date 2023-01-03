@@ -1,8 +1,5 @@
 import javax.swing.*;
 
-/*
-  Created by me on 25.02.17.
-*/
 public class internet {
     public void verbunden() {
         System.out.println("Sie sind verbunden");

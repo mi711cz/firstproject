@@ -1,7 +1,3 @@
-/**
- * Created by me on 09.01.22
- */
-// import java.util.Scanner;
 
 public class mainClass {
     public static void main(String[] args) {
