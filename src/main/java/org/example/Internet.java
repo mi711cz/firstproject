@@ -1,6 +1,9 @@
+package org.example;
+
 import javax.swing.*;
 
-public class internet {
+public class Internet {
+    
     public void verbunden() {
         System.out.println("Sie sind verbunden");
     }
@@ -19,15 +22,14 @@ public class internet {
     }
 
     public static void dialog(String text) {
-        int Ergebnis = JOptionPane.showConfirmDialog(null, text);
-        System.out.println(Ergebnis);
-        // return Ergebnis;
+        int ergebnis = JOptionPane.showConfirmDialog(null, text);
+        System.out.println(ergebnis);
 
-        if (Ergebnis == 0) {
+        if (ergebnis == 0) {
             JOptionPane.showMessageDialog(null, "Die Eingabe war JA");
-        } else if (Ergebnis == 1) {
+        } else if (ergebnis == 1) {
             JOptionPane.showMessageDialog(null, "Die Eingabe war NEIN");
-        } else if (Ergebnis == 2) {
+        } else if (ergebnis == 2) {
             JOptionPane.showMessageDialog(null, "Die Eingabe war Abbruch");
         }
     }

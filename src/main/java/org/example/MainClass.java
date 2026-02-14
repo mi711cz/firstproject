@@ -1,5 +1,11 @@
+package org.example;
 
-public class mainClass {
+public class MainClass {
+    
+    private static final int AGE_CHECK = 16;
+    private static final String LOG_LEVEL_ERROR = "WARNING";
+    private static final int MIN_THREADS = 10;
+
     public static void main(String[] args) {
         System.out.println("Hello World :)");
 
@@ -18,8 +24,6 @@ public class mainClass {
 
         // Kasten von Datentypen int nach double
         int zahl5 = 5;
-        // zahl5 ist eine Zahl vom typ integer, damit die berechnung funktioniert muss
-        // der datentyp gewandelt werden
         double zahl6 = (double) zahl5;
         double zahl7 = 5.6;
         System.out.println(zahl6 + zahl7);
@@ -28,28 +32,16 @@ public class mainClass {
         schreibeText("Benutze jetzt eine Methode");
         System.out.println(schreibeTextUndGibReturn(3, 4));
 
-        /*
-         * User input und Ausgabe mit der importierten Klasse Scanner
-         * Scanner userInput = new Scanner(System.in);
-         * System.out.println("Your input was: " + userInput.nextLine());
-         */
-
         altersCheck(20);
         switcher(25);
         increment(2);
         schleife();
         konditionellerOperator(99999);
 
-        internet wurst = new internet();
+        Internet wurst = new Internet();
         wurst.verbunden();
         System.out.println("Sie waren " + wurst.onlinezeit(3, 5) + " Min online");
         wurst.trennen();
-
-        // Confirm und Message Dialog
-        // wurst.dialog("Was antwortest Du?");
-
-        // try and catch
-        // wurst.tryAndCatch();
 
         // Getter und Setter
         GetterUndSetter getUndSet = new GetterUndSetter();
@@ -63,27 +55,26 @@ public class mainClass {
         do_while();
 
         TestHashMap myHM = new TestHashMap();
-        myHM.Tiere.put("Hase", "weiss");
-        myHM.Tiere.put("Schwan", "schwarz");
-        myHM.Tiere.put("Ara", "bunt");
+        myHM.getTiere().put("Hase", "weiss");
+        myHM.getTiere().put("Schwan", "schwarz");
+        myHM.getTiere().put("Ara", "bunt");
 
-        for (String i : myHM.Tiere.keySet()) {
-            System.out.println("Tier: " + i + " Farbe: " + myHM.Tiere.get(i));
+        for (String i : myHM.getTiere().keySet()) {
+            System.out.println("Tier: " + i + " Farbe: " + myHM.getTiere().get(i));
         }
-        System.out.println(myHM.Tiere.get("Ara"));
+        System.out.println(myHM.getTiere().get("Ara"));
 
-        myHM.Parameter.put("mode", "delete");
-        myHM.Parameter.put("logLevel", "WARM");
-        myHM.Parameter.put("threads", "10");
+        myHM.getParameter().put("mode", "delete");
+        myHM.getParameter().put("logLevel", LOG_LEVEL_ERROR);
+        myHM.getParameter().put("threads", String.valueOf(MIN_THREADS));
 
-        for (String i : myHM.Parameter.keySet()) {
-            System.out.println("Parameter: " + i + " Value: " + myHM.Parameter.get(i));
+        for (String i : myHM.getParameter().keySet()) {
+            System.out.println("Parameter: " + i + " Value: " + myHM.getParameter().get(i));
             if (i.equals("threads")) {
-                int x = Integer.parseInt(myHM.Parameter.get(i));
+                int x = Integer.parseInt(myHM.getParameter().get(i));
                 System.out.println("Threads: " + x);
             }
         }
-
     }
 
     public static void schreibeText(String text) {
@@ -96,10 +87,10 @@ public class mainClass {
     }
 
     public static void altersCheck(int alter) {
-        if (alter < 16) {
+        if (alter < AGE_CHECK) {
             System.out.println("Kein Alk");
-        } else if (alter == 16) {
-            System.out.println("Nur Bier unf Wein");
+        } else if (alter == AGE_CHECK) {
+            System.out.println("Nur Bier und Wein");
         } else {
             System.out.println("Alles gibts");
         }
@@ -107,22 +98,10 @@ public class mainClass {
 
     public static void switcher(int text) {
         switch (text) {
-            case 15: {
-                System.out.println("Die übergabe war: 15 " + text);
-                break;
-            }
-            case 17: {
-                System.out.println("Die übergabe war: 17 " + text);
-                break;
-            }
-            case 25: {
-                System.out.println("Die übergabe war: 25 " + text);
-                break;
-            }
-            default: {
-                System.out.println("Die übergabe war: default");
-                break;
-            }
+            case 15 -> System.out.println("Die übergabe war: 15 " + text);
+            case 17 -> System.out.println("Die übergabe war: 17 " + text);
+            case 25 -> System.out.println("Die übergabe war: 25 " + text);
+            default -> System.out.println("Die übergabe war: default");
         }
     }
 
@@ -144,7 +123,6 @@ public class mainClass {
     }
 
     public static void konditionellerOperator(int zahl) {
-        // wenn Bedingung erfüllt "?" DANN ":" SONST
         System.out.println(zahl > 10000 ? "Große Zahl" : "Kleine Zahl");
     }
 
@@ -157,5 +135,4 @@ public class mainClass {
             var2++;
         } while (var2 < 5);
     }
-
 }

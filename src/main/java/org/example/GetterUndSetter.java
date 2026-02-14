@@ -1,8 +1,9 @@
+package org.example;
+
 import lombok.Data;
 
 @Data
 public class GetterUndSetter {
 
-  private String bossName;
-
+    private String bossName;
 }
